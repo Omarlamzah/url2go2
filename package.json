@@ -16,10 +16,11 @@
     "@electron/rebuild": "^3.6.0"
   },
   "build": {
-   "target": "dmg",
-    "icon": "icon/icon.icns",
-    "electronDist": "/path/to/electron/dist",
-    "extends": null,
-    "python": "/usr/local/bin/python3.9"
+    "mac": {
+      "target": "dmg",
+      "icon": "icon/icon.icns",
+      "extends": null,
+      "python": "/usr/local/bin/python3.9"
+    }
   }
 }
