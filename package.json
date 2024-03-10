@@ -15,12 +15,13 @@
     "electron-builder": "^24.13.3",
     "@electron/rebuild": "^3.6.0"
   },
-  "build": {
-    "mac": {
+"build": {
+  "mac": {
+    "target": {
       "target": "dmg",
-      "icon": "icon/icon.icns",
-      "extends": null,
-      "python": "/usr/local/bin/python3.9"
+      "icon": "icon/icon.icns"
     }
   }
+}
+
 }
