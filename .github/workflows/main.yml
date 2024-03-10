@@ -18,6 +18,11 @@ jobs:
       with:
         node-version: '15'
 
+    - name: Install Python
+      run: |
+        brew install python@3.9
+        ln -s -f /usr/local/bin/python3.9 /usr/local/bin/python
+
     - name: Install dependencies
       run: npm install
 
@@ -33,5 +38,3 @@ jobs:
     # Display status message after successful build
     - name: Display Success Message
       run: echo "DMG built successfully!"
-
-    # Add additional steps as per your requirements
