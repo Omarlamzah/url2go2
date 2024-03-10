@@ -19,13 +19,33 @@
   "mac": {
     "target": "dmg",
     "icon": "icon/icon.icns",
-    "extends": null,
-    "asar": true,
-    "directories": {
-      "buildResources": "path/to/buildResources"
+    "dmg": {
+      "background": "path/to/background.png",
+      "backgroundColor": "#ffffff",
+      "iconSize": 80,
+      "iconTextSize": 12,
+      "title": "${productName} ${version}",
+      "contents": [
+        {
+          "x": 100,
+          "y": 100,
+          "type": "link",
+          "path": "/Applications",
+          "name": "Applications"
+        }
+      ],
+      "window": {
+        "x": 400,
+        "y": 100,
+        "width": 600,
+        "height": 400
+      },
+      "internetEnabled": false,
+      "sign": false
     }
   }
 }
+
 
 
 }
