@@ -15,36 +15,15 @@
     "electron-builder": "^24.13.3",
     "@electron/rebuild": "^3.6.0"
   },
-"build": {
+ "build": {
   "mac": {
     "target": "dmg",
     "icon": "icon/icon.icns",
-    "dmg": {
-      "background": "path/to/background.png",
-      "backgroundColor": "#ffffff",
-      "iconSize": 80,
-      "iconTextSize": 12,
-      "title": "${productName} ${version}",
-      "contents": [
-        {
-          "x": 100,
-          "y": 100,
-          "type": "link",
-          "path": "/Applications",
-          "name": "Applications"
-        }
-      ],
-      "window": {
-        "x": 400,
-        "y": 100,
-        "width": 600,
-        "height": 400
-      },
-      "internetEnabled": false,
-      "sign": false
-    }
+    "title": "${productName} ${version}",
+    "artifactName": "${productName}-${version}-mac.${ext}"
   }
 }
+
 
 
 
