@@ -32,3 +32,10 @@ jobs:
         with:
           name: electron-dmg
           path: dist/*.dmg
+
+      - name: Publish Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            dist/*.dmg
+          token: ${{ secrets.GH_TOKEN }}
