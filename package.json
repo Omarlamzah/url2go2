@@ -11,7 +11,7 @@
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^15.0.0",
+    "electron": "^29.1.1",
     "electron-builder": "^24.13.3",
     "@electron/rebuild": "^3.6.0"
   },
