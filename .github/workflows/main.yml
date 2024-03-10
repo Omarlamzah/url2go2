@@ -1,4 +1,4 @@
-name: Electron Build
+name: Build and Release
 
 on:
   push:
@@ -9,42 +9,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: 14
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
       - name: Build Electron App
-        run: npm run build
+        run: npx electron-builder
 
-      - name: Package Electron App
-        run: npm run package
-
-      - name: Upload DMG artifact
+      - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: electron-dmg
-          path: dist/*.dmg
+          name: dist
+          path: dist
 
-
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
       
-
-      - name: Publish Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            dist/*.dmg
-          token: ${{ env.GH_TOKEN }}
-
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
