@@ -17,11 +17,15 @@
   },
 "build": {
   "mac": {
-    "target": {
-      "target": "dmg",
-      "icon": "icon/icon.icns"
+    "target": "dmg",
+    "icon": "icon/icon.icns",
+    "extends": null,
+    "asar": true,
+    "directories": {
+      "buildResources": "path/to/buildResources"
     }
   }
 }
+
 
 }
